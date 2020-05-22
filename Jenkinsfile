@@ -17,10 +17,10 @@ pipeline {
         stage ('Build') {
             steps {
                 echo 'This is a minimal pipeline.'
-                sh """ ls -ltr
-		    pwd """
-		   sh "chmod 777 /var/jenkins_home/workspace/FirstCICDCloudProject/Driver/chromedriver.exe"
-		   sh 'mvn -Dmaven.test.failure.ignore=true install'
+                sh """ls -ltr
+		    pwd
+		    chmod 777 /var/jenkins_home/workspace/FirstCICDCloudProject/Drivers/chromedriver.exe
+		    mvn -Dmaven.test.failure.ignore=true install"""
             }
         
 	    post {
@@ -33,11 +33,10 @@ pipeline {
 
             steps {
                     
-		                    sh """ ls -ltr
-		    pwd """
-		   sh "chmod 777 /var/jenkins_home/workspace/FirstCICDCloudProject/Driver/chromedriver.exe"
-		    sh 'mvn test'
-		    
+			sh """ls -ltr
+		    pwd
+		    chmod 777 /var/jenkins_home/workspace/FirstCICDCloudProject/Drivers/chromedriver.exe
+		     mvn test"""
                 
             }
         }

@@ -17,7 +17,9 @@ pipeline {
         stage ('Build') {
             steps {
                 echo 'This is a minimal pipeline.'
-                sh 'mvn -Dmaven.test.failure.ignore=true install'
+                sh """ls -ltr
+		    pwd
+		    mvn -Dmaven.test.failure.ignore=true install"""
             }
         
 	    post {
@@ -29,7 +31,10 @@ pipeline {
 		stage ('Testing Stage') {
 
             steps {
-                    sh 'mvn test'
+                    
+		    sh """ls -ltr
+		    mvn test"""
+		    
                 
             }
         }

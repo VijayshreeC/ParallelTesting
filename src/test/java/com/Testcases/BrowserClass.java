@@ -44,7 +44,7 @@ public class BrowserClass {
 		} 
 		else if (browsername.equals("remotechrome")) {
 			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("user.dir") + "\\Drivers\\chromedriver.exe");
+					System.getProperty("user.dir") + "/Drivers/chromedriver.exe");
 			System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 			DesiredCapabilities dc = new DesiredCapabilities();
 			dc.setBrowserName("chrome");

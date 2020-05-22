@@ -18,9 +18,10 @@ pipeline {
             steps {
                 echo 'This is a minimal pipeline.'
                 sh """ls -ltr
-		    pwd
-		    chmod 777 /var/jenkins_home/workspace/FirstCICDCloudProject/Drivers/chromedriver.exe
-		    mvn -Dmaven.test.failure.ignore=true install"""
+		    pwd"""
+		   sh 'cd /var/jenkins_home/workspace/FirstCICDCloudProject/Drivers'
+		    sh 'chmod 777 chromedriver.exe'
+		   sh 'mvn -Dmaven.test.failure.ignore=true install'
             }
         
 	    post {

@@ -20,6 +20,8 @@ pipeline {
                 sh """ls -ltr
 		    pwd"""
 		   sh 'cd /var/jenkins_home/workspace/FirstCICDCloudProject/Drivers'
+		    sh """pwd
+		    ls -ltr"""
 		    sh 'chmod 777 chromedriver.exe'
 		   sh 'mvn -Dmaven.test.failure.ignore=true install'
             }
